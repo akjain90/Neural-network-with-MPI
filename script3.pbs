@@ -1,0 +1,11 @@
+#!/bin/bash
+#PBS -l nodes=3:ppn=40
+#PBS -l walltime=24:00:00
+#PBS -M aishvaryakumarjain@gmail.com -m abe
+#PBS -N MPI_nn
+
+module load openmpi
+cd ~/learning_curve
+make clean
+make
+mpirun -np 120 ./main
